@@ -1,0 +1,33 @@
+:root {
+/* FONTS */
+--font-textos: "Chakra Petch";
+--font-tittle: "Orbitron";
+
+/* COLORS */
+--color-nude: #dedee0;
+--color-darkgray: #1a1a1a;
+--color-secondary: #db492c;
+--opacity-back: 0.3;
+
+--image-back: url('https://i.pinimg.com/564x/a6/21/4b/a6214bb2691a89812ac39a969a0c60b6.jpg');
+--image-dots: url("https://portal.thenifty.com/static_homepage/images/dots.svg");
+--image-noise: url('https://herdl.com/wp-content/uploads/2020/11/noise-web.webp');
+
+/* FONT SIZES */
+--font-size-titulo-principal: 70px;
+--font-size-titulo-principal-mobile: 50px;
+--font-size-titulos-secundarios: 20px;
+--font-size-menu: 16px;
+--font-size-footer: 14px;
+
+/* PADDINGS */
+--padding-xxs: 6px;
+--padding-xs: 16px;
+
+/* MARGINGS */
+--margin-xs: 16px;
+--margin-s: 30px;
+
+/* BORDER RADIUS */
+--border-content: 20px;
+}

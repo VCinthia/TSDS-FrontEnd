@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- Body styles --- */
+body {
+    font-family: var(--font-textos);
+    color: var(--color-nude);
+    background-color: var(--color-darkgray);
+    display: flex;
+    flex-direction: column;
+    padding: 2vh;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+/* --- Body background images --- */
+body::before,
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+body::before {
+    background-image: var(--image-back);
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+    opacity: var(--opacity-back);
+}
+
+body::after {
+    position: absolute;
+    background: var(--image-dots);
+    background-size: auto, auto;
+    background-repeat: repeat, repeat;
+    background-position: 50% 50%, 50% 50%;
+
+    z-index: -1;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* --- Noise overlay on screen --- */
+.noise-overlay::before {
+    content: "";
+    opacity: 0.4;
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: var(--image-noise);
+    -webkit-animation: 90ms infinite noise;
+    animation: 90ms infinite noise;
+}
+
+/* Animation for noise effect */
+@keyframes noise {
+
+    0%,
+    100% {
+        background-position: 0 0;
+    }
+
+    10% {
+        background-position: -5% -10%;
+    }
+
+    20% {
+        background-position: -15% 5%;
+    }
+
+    30% {
+        background-position: 7% -25%;
+    }
+
+    40% {
+        background-position: 20% 25%;
+    }
+
+    50% {
+        background-position: -25% 10%;
+    }
+
+    60% {
+        background-position: 15% 5%;
+    }
+
+    70% {
+        background-position: 0 15%;
+    }
+
+    80% {
+        background-position: 25% 35%;
+    }
+
+    90% {
+        background-position: -10% 10%;
+    }
+}
+
+/* --- Page sections styles (nav, section, footer) --- */
+nav,
+section,
+footer {
+    margin-bottom: var(--margin-xs);
+}
+
+.h-tex {
+    font-size: var(--font-size-titulo-principal);
+}
+
+/* --- Navigation menu list styles --- */
+ul {
+    display: flex;
+    list-style: none;
+    align-items: baseline;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+
+li,
+a {
+    color: var(--color-nude);
+    text-decoration: none;
+    font-size: var(--font-size-menu);
+    padding: var(--padding-xs);
+
+}
+
+li,
+a:hover {
+    color: var(--color-secondary);
+}
+
+.list-name {
+    color: var(--color-secondary);
+    justify-content: flex-start;
+    font-weight: bolder;
+    align-items: baseline;
+    padding-left: var(--padding-xs);
+}
+
+.list-name a {
+    padding: 0;
+    justify-content: flex-start;
+}
+
+/* --- Table and container styles with borders and alignment --- */
+.box-content,
+table {
+    background-color: var(--color-darkgray);
+    color: var(--color-nude);
+    border: 2px solid var(--color-nude);
+    border-radius: var(--border-content);
+    position: relative;
+    padding-top: var(--padding-xxs);
+    padding-bottom: var(--padding-xxs);
+    padding: 0;
+    width: 100%;
+    align-items: baseline;
+    justify-content: space-around;
+    margin-bottom: var(--margin-xs);
+    margin-bottom: var(--margin-s);
+
+}
+
+tr {
+    justify-content: space-around;
+}
+
+td input,
+textarea,
+button {
+    width: 100%;
+    background: none;
+    border-style: none;
+    color: var(--color-nude);
+    resize: none;
+    align-items: baseline;
+    display: flex;
+    box-sizing: none;
+}
+
+td input:focus,
+td textarea:focus,
+td button:focus {
+    outline: none;
+}
+
+td,
+th,
+input,
+textarea,
+button {
+    padding: 0.5vh;
+}
+
+/* --- Styles for personal information section --- */
+.personal {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.personal-right p,
+.personal-right a {
+    align-self: flex-end;
+}
+
+/* --- Styles for alert messages --- */
+.alert-message {
+    color: var(--color-secondary);
+}
+
+/* --- Table borders and lines styles --- */
+.line-top {
+    border-top: solid 1px;
+}
+
+.line-right {
+    border-right: solid 1px;
+}
+
+/* --- Styles for flexible table elements --- */
+.long {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+/* --- Footer styles --- */
+.final-bye {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+/* --- Classes for showing or hiding elements --- */
+.hidden {
+    display: none !important;
+}
+
+.show {
+    display: flex;
+    justify-content: center;
+}
+
+/* --- Submit button styles --- */
+#submitMessage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bolder;
+    font-size: var(--font-size-menu);
+}
+
+#submitMessage:hover {
+    color: var(--color-secondary);
+    cursor: pointer;
+}
+
+/* --- Media queries for smaller screens --- */
+@media only screen and (max-width: 600px) {
+    li a .fab {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .h-tex {
+        font-size: var(--font-size-titulo-principal-mobile);
+    }
+}
