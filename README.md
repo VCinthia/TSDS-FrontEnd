@@ -30,4 +30,4 @@ This project is part of Assignment 1 of the FrontEnd course of the TSDS program 
 - **Responsive Design**: Using media queries to adapt the website to different screen sizes.
 
 ## Deploy
- - **URL**: 
+ - **URL**: https://cinthiarv-tsds-fe.vercel.app/
