@@ -140,6 +140,42 @@ a {
 
 }
 
+/**/
+
+.marquee{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.marquee-content {
+    display: inline-flex;
+    animation: marquee 150s linear infinite;
+    white-space: nowrap;
+}
+
+.marquee p {
+    padding-right: 30px;
+    opacity: var(--opacity-white);
+    color: var(--color-nude);
+    font-family: var(--font-tittle);
+    font-size: var(--font-size-titulo-line);
+    font-weight: bold;
+    position: relative;
+    clip-path: inset(0 0 0 0);
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+/**/
+
 li,
 a:hover {
     color: var(--color-secondary);
